@@ -1,0 +1,67 @@
+<scroll-view class="page-shell" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="hero glass-card">
+    <image class="hero-bg" src="/assets/illustrations/bg-wave.svg" mode="aspectFill"></image>
+    <view class="hero-head">
+      <view>
+        <text class="hero-city">{{city}}</text>
+        <text class="hero-greeting">{{greeting}}</text>
+      </view>
+      <view class="hero-weather">☀ 24°</view>
+    </view>
+    <swiper class="hero-swiper" indicator-dots circular autoplay interval="3200" duration="500" bindchange="onBannerChange">
+      <block wx:for="{{banners}}" wx:key="*this">
+        <swiper-item>
+          <view class="banner-item">{{item}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="banner-indicator">
+      <text wx:for="{{banners}}" wx:key="index" class="dot {{index === activeBanner ? 'dot-active' : ''}}"></text>
+    </view>
+  </view>
+
+  <view class="quick-grid">
+    <view wx:for="{{quickActions}}" wx:key="title" class="quick-item glass-card" data-index="{{index}}" bindtap="onTapQuickAction">
+      <text class="quick-badge">{{item.badge}}</text>
+      <text class="quick-title">{{item.title}}</text>
+      <text class="quick-sub">{{item.subtitle}}</text>
+    </view>
+  </view>
+
+  <view class="module glass-card">
+    <view class="module-head">
+      <text class="module-title">同城热门服务</text>
+    </view>
+    <view class="chip-list">
+      <text wx:for="{{serviceTags}}" wx:key="*this" class="chip" data-tag="{{item}}" bindtap="onTapServiceTag">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="module glass-card">
+    <view class="module-head">
+      <text class="module-title">最新需求</text>
+      <text class="module-link" bindtap="onGoHall">查看全部</text>
+    </view>
+    <view wx:for="{{demandCards}}" wx:key="id" class="demand-card">
+      <view class="demand-head">
+        <text class="demand-title">{{item.title}}</text>
+        <text class="collect" data-id="{{item.id}}" bindtap="onToggleCollect">{{item.collected ? '♥ 已关注' : '♡ 关注'}}</text>
+      </view>
+      <text class="demand-meta">{{item.district}} · {{item.schedule}}</text>
+      <view class="tag-row">
+        <text wx:for="{{item.tags}}" wx:key="*this" class="tag">{{item}}</text>
+      </view>
+      <view class="demand-foot">
+        <text class="budget">{{item.budget}}</text>
+        <button class="mini-btn" data-id="{{item.id}}" bindtap="onGoHall">立即沟通</button>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="bottom-nav">
+  <view class="bottom-nav-item active" data-key="index" bindtap="onSwitchTab">首页</view>
+  <view class="bottom-nav-item" data-key="discover" bindtap="onSwitchTab">发现</view>
+  <view class="bottom-nav-item" data-key="message" bindtap="onSwitchTab">消息</view>
+  <view class="bottom-nav-item" data-key="profile" bindtap="onSwitchTab">我的</view>
+</view>

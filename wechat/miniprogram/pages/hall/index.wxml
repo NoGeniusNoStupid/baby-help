@@ -1,0 +1,31 @@
+<scroll-view class="page-shell" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="head glass-card">
+    <text class="head-title">同城需求大厅</text>
+    <text class="head-sub">精选家长真实需求，支持筛选和快速报名</text>
+  </view>
+
+  <scroll-view class="filter-scroll" scroll-x enable-flex show-scrollbar="{{false}}">
+    <text
+      wx:for="{{filters}}"
+      wx:key="*this"
+      class="filter {{item === activeFilter ? 'filter-active' : ''}}"
+      data-filter="{{item}}"
+      bindtap="onFilter"
+    >
+      {{item}}
+    </text>
+  </scroll-view>
+
+  <view wx:for="{{demands}}" wx:key="id" class="demand glass-card">
+    <view class="demand-head">
+      <text class="demand-title">{{item.title}}</text>
+      <text wx:if="{{item.urgent}}" class="urgent">急单</text>
+    </view>
+    <text class="line">{{item.area}}</text>
+    <text class="line">{{item.frequency}}</text>
+    <view class="foot">
+      <text class="money">{{item.budget}}</text>
+      <button class="apply" data-id="{{item.id}}" bindtap="onApply">报名沟通</button>
+    </view>
+  </view>
+</scroll-view>

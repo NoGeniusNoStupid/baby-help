@@ -1,0 +1,85 @@
+<scroll-view class="page-shell" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="panel glass-card">
+    <text class="title">需求信息</text>
+
+    <view class="field">
+      <text class="label">服务类型</text>
+      <picker mode="selector" range="{{serviceTypes}}" value="{{serviceTypeIndex}}" bindchange="onChangeService">
+        <view class="picker-value">{{serviceTypes[serviceTypeIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">所在区域</text>
+      <picker mode="selector" range="{{districts}}" value="{{districtIndex}}" bindchange="onChangeDistrict">
+        <view class="picker-value">{{districts[districtIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">服务时段</text>
+      <picker mode="selector" range="{{timeOptions}}" value="{{timeIndex}}" bindchange="onChangeTime">
+        <view class="picker-value">{{timeOptions[timeIndex]}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="panel glass-card">
+    <text class="title">匹配方式</text>
+    <view class="mode-row">
+      <text class="mode {{matchMode === '系统智能匹配' ? 'mode-active' : ''}}" data-mode="系统智能匹配" bindtap="onChooseMode">系统智能匹配</text>
+      <text class="mode {{matchMode === '自己挑选服务方' ? 'mode-active' : ''}}" data-mode="自己挑选服务方" bindtap="onChooseMode">自己挑选服务方</text>
+    </view>
+
+    <view class="field">
+      <text class="label">每周服务次数：{{frequency}} 次</text>
+      <slider min="1" max="7" value="{{frequency}}" activeColor="#ff7b63" backgroundColor="#f7d9cb" bindchange="onChangeFrequency"></slider>
+    </view>
+
+    <view class="field">
+      <text class="label">预算金额（元）</text>
+      <input class="input" type="number" value="{{budget}}" bindinput="onInputBudget" />
+    </view>
+
+    <view class="field inline">
+      <text class="label">急单加速</text>
+      <switch checked="{{urgent}}" color="#ff7f67" bindchange="onToggleUrgent"></switch>
+    </view>
+
+    <view class="field">
+      <text class="label">补充说明</text>
+      <textarea
+        class="textarea"
+        maxlength="120"
+        placeholder="例如：需要女性老师，放学后18点前到校门口接孩子。"
+        value="{{note}}"
+        bindinput="onInputNote"
+      />
+    </view>
+  </view>
+
+  <view class="panel glass-card">
+    <text class="title">费用预估</text>
+    <view class="price-row">
+      <text>基础预算</text>
+      <text>{{budget}} 元</text>
+    </view>
+    <view class="price-row">
+      <text>优惠券</text>
+      <text>- {{couponAmount}} 元</text>
+    </view>
+    <view class="price-row">
+      <text>急单加价</text>
+      <text>{{urgent ? '+ 120 元' : '0 元'}}</text>
+    </view>
+    <view class="price-row total">
+      <text>合计</text>
+      <text>{{estimateTotal}}</text>
+    </view>
+  </view>
+
+  <view class="submit-wrap">
+    <image class="submit-bg" src="/assets/illustrations/btn-shine.svg" mode="scaleToFill"></image>
+    <button class="primary-btn submit" bindtap="onSubmit">确认发布需求</button>
+  </view>
+</scroll-view>

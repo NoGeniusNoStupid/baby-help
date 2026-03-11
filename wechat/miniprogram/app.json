@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/discover/index",
+    "pages/message/index",
+    "pages/profile/index",
+    "pages/publish/index",
+    "pages/hall/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "童伴同城",
+    "navigationBarBackgroundColor": "#fff5ef",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "lazyCodeLoading": "requiredComponents"
+}

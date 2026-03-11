@@ -1,0 +1,13 @@
+<svg width="300" height="220" viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="planet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD6C4"/>
+      <stop offset="100%" stop-color="#FF7F67"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="220" fill="#FFF7F3"/>
+  <circle cx="130" cy="110" r="64" fill="url(#planet)"/>
+  <ellipse cx="130" cy="110" rx="92" ry="24" fill="none" stroke="#FFB79D" stroke-width="8"/>
+  <circle cx="220" cy="50" r="20" fill="#FFD8C9"/>
+  <circle cx="232" cy="78" r="8" fill="#FF9B83"/>
+</svg>

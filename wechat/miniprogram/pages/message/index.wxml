@@ -1,0 +1,41 @@
+<scroll-view class="page-shell" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="header glass-card">
+    <view>
+      <text class="title">消息中心</text>
+      <text class="sub">服务沟通、系统通知、报名进度都在这里</text>
+    </view>
+    <button class="switch-btn" bindtap="onToggleMockMode">{{hasMessages ? '查看失联图' : '恢复消息'}}</button>
+  </view>
+
+  <block wx:if="{{hasMessages}}">
+    <view class="chat-list">
+      <view wx:for="{{chats}}" wx:key="id" class="chat-item glass-card" data-title="{{item.title}}" bindtap="onTapChat">
+        <view class="avatar">{{item.initial}}</view>
+        <view class="chat-main">
+          <view class="chat-head">
+            <text class="chat-title">{{item.title}}</text>
+            <text class="chat-time">{{item.time}}</text>
+          </view>
+          <text class="chat-content">{{item.content}}</text>
+        </view>
+        <text wx:if="{{item.unread > 0}}" class="badge">{{item.unread}}</text>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="empty glass-card">
+      <image class="empty-illustration" src="/assets/illustrations/empty-lost.svg" mode="aspectFit"></image>
+      <text class="empty-title">暂时联系不上新会话</text>
+      <text class="empty-sub">这是一张“失联图”场景示意，稍后刷新即可恢复。</text>
+      <button class="primary-btn" bindtap="onToggleMockMode">立即重连</button>
+    </view>
+  </block>
+</scroll-view>
+
+<view class="bottom-nav">
+  <view class="bottom-nav-item" data-key="index" bindtap="onSwitchTab">首页</view>
+  <view class="bottom-nav-item" data-key="discover" bindtap="onSwitchTab">发现</view>
+  <view class="bottom-nav-item active" data-key="message" bindtap="onSwitchTab">消息</view>
+  <view class="bottom-nav-item" data-key="profile" bindtap="onSwitchTab">我的</view>
+</view>

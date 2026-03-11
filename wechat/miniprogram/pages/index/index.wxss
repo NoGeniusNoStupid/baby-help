@@ -1,0 +1,250 @@
+.hero {
+  padding: 28rpx;
+  background: linear-gradient(140deg, rgba(255, 160, 126, 0.24), rgba(255, 255, 255, 0.85));
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 220rpx;
+  opacity: 0.28;
+}
+
+.hero-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-city {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 8rpx 20rpx;
+  border-radius: 999rpx;
+  color: #ff7b68;
+  font-size: 24rpx;
+}
+
+.hero-greeting {
+  display: block;
+  margin-top: 16rpx;
+  font-size: 34rpx;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.hero-weather {
+  color: #866e62;
+  font-size: 24rpx;
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.hero-swiper {
+  margin-top: 24rpx;
+  height: 120rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-item {
+  height: 100%;
+  border-radius: 24rpx;
+  background: linear-gradient(120deg, #ff8d6b 0%, #ffab84 100%);
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+
+.banner-indicator {
+  margin-top: 16rpx;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.dot {
+  display: inline-block;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #f7ccbe;
+  margin: 0 6rpx;
+}
+
+.dot-active {
+  width: 28rpx;
+  border-radius: 99rpx;
+  background: #ff7f67;
+}
+
+.quick-grid {
+  margin-top: 22rpx;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20rpx;
+}
+
+.quick-item {
+  padding: 24rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-item:nth-child(1) {
+  background: linear-gradient(145deg, rgba(255, 121, 98, 0.92), rgba(255, 175, 141, 0.86));
+}
+
+.quick-item:nth-child(2) {
+  background: linear-gradient(145deg, rgba(255, 219, 168, 0.94), rgba(255, 244, 235, 0.92));
+}
+
+.quick-badge {
+  display: inline-block;
+  font-size: 20rpx;
+  padding: 6rpx 14rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.78);
+  color: #ff725e;
+}
+
+.quick-title {
+  display: block;
+  margin-top: 24rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #fff;
+}
+
+.quick-item:nth-child(2) .quick-title {
+  color: #5f4b40;
+}
+
+.quick-sub {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.quick-item:nth-child(2) .quick-sub {
+  color: #876c5c;
+}
+
+.module {
+  margin-top: 22rpx;
+  padding: 24rpx;
+}
+
+.module-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.module-title {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.module-link {
+  color: #ff7d66;
+  font-size: 24rpx;
+}
+
+.chip-list {
+  margin-top: 18rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.chip {
+  font-size: 24rpx;
+  color: #7c6256;
+  background: #fff3eb;
+  border-radius: 999rpx;
+  padding: 12rpx 24rpx;
+}
+
+.demand-card {
+  margin-top: 20rpx;
+  border: 2rpx solid var(--line);
+  border-radius: 24rpx;
+  padding: 22rpx;
+}
+
+.demand-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.demand-title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.collect {
+  font-size: 22rpx;
+  color: #ff7f67;
+}
+
+.demand-meta {
+  margin-top: 14rpx;
+  display: block;
+  color: var(--text-secondary);
+  font-size: 24rpx;
+}
+
+.tag-row {
+  margin-top: 14rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.tag {
+  font-size: 22rpx;
+  color: #a67764;
+  background: #fff7f3;
+  border-radius: 12rpx;
+  padding: 8rpx 14rpx;
+}
+
+.demand-foot {
+  margin-top: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.budget {
+  color: #ff694f;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.mini-btn {
+  margin: 0;
+  border: none;
+  background: #fff0e8;
+  color: #ff7a63;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  line-height: 1;
+  padding: 16rpx 24rpx;
+}

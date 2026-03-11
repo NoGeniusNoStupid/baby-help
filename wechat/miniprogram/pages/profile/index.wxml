@@ -1,0 +1,41 @@
+<scroll-view class="page-shell" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="top-card glass-card">
+    <view class="avatar">童</view>
+    <view class="profile-main">
+      <text class="name">{{name}}</text>
+      <text class="desc">让接送和托管安排更轻松</text>
+    </view>
+  </view>
+
+  <view class="stats glass-card">
+    <view wx:for="{{stats}}" wx:key="label" class="stat-item">
+      <text class="value">{{item.value}}</text>
+      <text class="label">{{item.label}}</text>
+    </view>
+  </view>
+
+  <view class="action glass-card">
+    <view class="action-info">
+      <text class="action-title">开启快捷发布</text>
+      <text class="action-sub">高频需求模板一键复用，提升响应效率</text>
+    </view>
+    <button class="primary-btn" bindtap="onGoPublish">立即发布</button>
+  </view>
+
+  <view class="tools glass-card">
+    <view wx:for="{{tools}}" wx:key="title" class="tool-item" data-title="{{item.title}}" bindtap="onTapTool">
+      <view>
+        <text class="tool-title">{{item.title}}</text>
+        <text class="tool-sub">{{item.subtitle}}</text>
+      </view>
+      <text class="tool-arrow">›</text>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="bottom-nav">
+  <view class="bottom-nav-item" data-key="index" bindtap="onSwitchTab">首页</view>
+  <view class="bottom-nav-item" data-key="discover" bindtap="onSwitchTab">发现</view>
+  <view class="bottom-nav-item" data-key="message" bindtap="onSwitchTab">消息</view>
+  <view class="bottom-nav-item active" data-key="profile" bindtap="onSwitchTab">我的</view>
+</view>

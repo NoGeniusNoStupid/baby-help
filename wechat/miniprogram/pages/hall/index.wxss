@@ -1,0 +1,93 @@
+.head {
+  padding: 28rpx;
+}
+
+.head-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.head-sub {
+  display: block;
+  margin-top: 12rpx;
+  color: #8d7d73;
+  font-size: 24rpx;
+}
+
+.filter-scroll {
+  margin-top: 20rpx;
+  white-space: nowrap;
+}
+
+.filter {
+  display: inline-block;
+  background: #fff;
+  border: 2rpx solid #f4e5dd;
+  border-radius: 999rpx;
+  padding: 12rpx 24rpx;
+  color: #8f8076;
+  font-size: 24rpx;
+  margin-right: 14rpx;
+}
+
+.filter-active {
+  color: #ff755d;
+  border-color: #ffd2c4;
+  background: #fff2ea;
+}
+
+.demand {
+  margin-top: 18rpx;
+  padding: 24rpx;
+}
+
+.demand-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.demand-title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.urgent {
+  font-size: 20rpx;
+  color: #fff;
+  background: #ff7158;
+  border-radius: 999rpx;
+  padding: 6rpx 14rpx;
+}
+
+.line {
+  display: block;
+  margin-top: 10rpx;
+  color: #7f7067;
+  font-size: 24rpx;
+}
+
+.foot {
+  margin-top: 18rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.money {
+  font-size: 30rpx;
+  color: #ff6f56;
+  font-weight: 700;
+}
+
+.apply {
+  margin: 0;
+  border: none;
+  border-radius: 999rpx;
+  padding: 16rpx 24rpx;
+  font-size: 24rpx;
+  line-height: 1;
+  color: #ff7a62;
+  background: #fff0e8;
+}

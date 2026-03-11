@@ -1,0 +1,46 @@
+<scroll-view class="page-shell" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="hero glass-card">
+    <text class="hero-title">发现优质托管与接送服务</text>
+    <text class="hero-sub">按区域、服务时段、口碑快速筛选，匹配更安心</text>
+    <view class="hero-actions">
+      <button class="hero-btn warm" bindtap="onGoPublish">发布需求</button>
+      <button class="hero-btn light" bindtap="onGoHall">逛信息大厅</button>
+    </view>
+  </view>
+
+  <scroll-view class="category-scroll" scroll-x enable-flex show-scrollbar="{{false}}">
+    <text
+      wx:for="{{categories}}"
+      wx:key="*this"
+      class="category-item {{item === activeCategory ? 'category-active' : ''}}"
+      data-category="{{item}}"
+      bindtap="onTapCategory"
+    >
+      {{item}}
+    </text>
+  </scroll-view>
+
+  <view class="list-wrap">
+    <view wx:for="{{cards}}" wx:key="id" class="card glass-card" data-title="{{item.title}}" bindtap="onTapCard">
+      <view class="card-row">
+        <text class="card-title">{{item.title}}</text>
+        <text class="score">{{item.score}}</text>
+      </view>
+      <text class="card-meta">{{item.district}}</text>
+      <view class="tag-row">
+        <text wx:for="{{item.tags}}" wx:key="*this" class="tag">{{item}}</text>
+      </view>
+      <view class="card-foot">
+        <text class="price">{{item.price}}</text>
+        <text class="card-link">查看详情</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="bottom-nav">
+  <view class="bottom-nav-item" data-key="index" bindtap="onSwitchTab">首页</view>
+  <view class="bottom-nav-item active" data-key="discover" bindtap="onSwitchTab">发现</view>
+  <view class="bottom-nav-item" data-key="message" bindtap="onSwitchTab">消息</view>
+  <view class="bottom-nav-item" data-key="profile" bindtap="onSwitchTab">我的</view>
+</view>
