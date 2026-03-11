@@ -14,7 +14,7 @@ page {
 }
 
 .page-shell {
-  min-height: 100vh;
+  height: 100vh;
   padding: 24rpx 24rpx 168rpx;
   box-sizing: border-box;
 }
@@ -44,13 +44,13 @@ button::after {
 
 .bottom-nav {
   position: fixed;
-  left: 24rpx;
-  right: 24rpx;
-  bottom: 24rpx;
+  left: 12rpx;
+  right: 12rpx;
+  bottom: calc(24rpx + env(safe-area-inset-bottom));
   background: rgba(255, 255, 255, 0.96);
   border-radius: 999rpx;
   box-shadow: 0 20rpx 56rpx rgba(40, 20, 10, 0.12);
-  padding: 12rpx;
+  padding: 10rpx 12rpx;
   display: flex;
   z-index: 999;
 }
@@ -58,9 +58,12 @@ button::after {
 .bottom-nav-item {
   flex: 1;
   text-align: center;
-  font-size: 22rpx;
+  font-size: 30rpx;
   color: #9a8f87;
-  padding: 10rpx 0;
+  padding: 12rpx 0;
+  min-height: 68rpx;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .bottom-nav-item.active {

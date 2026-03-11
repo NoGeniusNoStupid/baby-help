@@ -8,7 +8,7 @@
       </view>
       <view class="hero-weather">☀ 24°</view>
     </view>
-    <swiper class="hero-swiper" indicator-dots circular autoplay interval="3200" duration="500" bindchange="onBannerChange">
+    <swiper class="hero-swiper" indicator-dots="{{false}}" circular autoplay interval="3200" duration="500" bindchange="onBannerChange">
       <block wx:for="{{banners}}" wx:key="*this">
         <swiper-item>
           <view class="banner-item">{{item}}</view>
